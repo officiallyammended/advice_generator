@@ -1,38 +1,138 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500&display=swap');
+#root , html , body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    box-sizing: border-box;
+
+}
+.app{
+    height:100%;
+    background:url(https://source.unsplash.com/1920x1080/?city);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.card{
+    color: whitesmoke;
+    background: linear-gradient(-110deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    animation: gradient 13s ease infinite;
+    background-size: 400% 400%;
+    padding:1%;
+    margin:1%;
+    width:60%;
+    height:min-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 25px;
+    padding: 2%;
+    box-shadow: 10px 10px rgba(255, 255, 255, 0.336);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.heading{
+    font-family: 'Spartan', sans-serif;
+    display: flex;
+    align-items: center;
+    padding:4%;
+    margin:4%;
+    
+}
+
+.button {
+    box-shadow: 5px 5px #5e5e5e71;
+    position: relative;
+    outline: none;
+    text-decoration: none;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding:2%;
+    padding-left:5%;
+    padding-right:5%;
+    margin:0%;
+    opacity: 1;
+    background-color: rgb(32, 32, 32);
+    border: none;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+    
+  .button span {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.7px;
   }
-  to {
-    transform: rotate(360deg);
+    
+  .button:hover {
+    animation: rotate 0.7s ease-in-out both;
   }
-}
+    
+  .button:hover span {
+    animation: storm 0.7s ease-in-out both;
+    animation-delay: 0.06s;
+  }
+    
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+    25% {
+      transform: rotate(3deg) translate3d(0, 0, 0);
+    }
+    50% {
+      transform: rotate(-3deg) translate3d(0, 0, 0);
+    }
+    75% {
+      transform: rotate(1deg) translate3d(0, 0, 0);
+    }
+    100% {
+      transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+  }
+    
+  @keyframes storm {
+    0% {
+      transform: translate3d(0, 0, 0) translateZ(0);
+    }
+    25% {
+      transform: translate3d(4px, 0, 0) translateZ(0);
+    }
+    50% {
+      transform: translate3d(-3px, 0, 0) translateZ(0);
+    }
+    75% {
+      transform: translate3d(2px, 0, 0) translateZ(0);
+    }
+    100% {
+      transform: translate3d(0, 0, 0) translateZ(0);
+    }
+  }
+
+  @media screen and (max-width:600px) {
+      .button{
+          margin-top:2%;
+        padding:2%;
+        padding-left:10%;
+        padding-right:10%;
+      }
+  }
